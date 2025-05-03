@@ -1,2 +1,0 @@
-0
-4799394 756242 1744601521077331201 a57ef996479207fe17b6ae7139105aa3 0 /home/stark/Software/Android/Sdk/ndk/29.0.13113456/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a
