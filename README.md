@@ -37,7 +37,7 @@ adb logcat | Select-String com.zig.sdl3:
 
 Bash (app doesn't need running to be running)
 ```sh
-adb logcat com.zig.sdl3:D *:S
+adb logcat | grep com.zig.sdl3:
 ```
 
 Bash (app must be running, logs everything by the process including modules)
