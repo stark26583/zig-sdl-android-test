@@ -1,0 +1,94 @@
+const std = @import("std");
+const builtin = @import("builtin");
+const android = @import("android");
+const sdl = @import("sdl");
+
+const log = std.log;
+const assert = std.debug.assert;
+
+/// custom standard options for Android
+pub const std_options: std.Options = if (builtin.abi.isAndroid())
+    .{
+        .logFn = android.logFn,
+    }
+else
+    .{};
+
+/// custom panic handler for Android
+pub const panic = if (builtin.abi.isAndroid())
+    android.panic
+else
+    std.debug.FullPanic(std.debug.defaultPanic);
+
+comptime {
+    if (builtin.abi.isAndroid()) {
+        @export(&SDL_main, .{ .name = "SDL_main", .linkage = .strong });
+    }
+}
+
+/// This needs to be exported for Android builds
+fn SDL_main() callconv(.C) void {
+    if (comptime builtin.abi.isAndroid()) {
+        _ = std.start.callMain();
+    } else {
+        @compileError("SDL_main should not be called outside of Android builds");
+    }
+}
+
+pub fn main() !void {
+    log.debug("started sdl-zig-demo", .{});
+
+    if (sdl.SDL_Init(sdl.SDL_INIT_VIDEO)) {
+        log.info("Unable to initialize SDL: {s}", .{sdl.SDL_GetError()});
+        return error.SDLInitializationFailed;
+    }
+    defer sdl.SDL_Quit();
+
+    // _ = sdl.SDL_SetHint(sdl.SDL_HINT_RENDER_DRIVER, "opengles3");
+
+    const screen = sdl.SDL_CreateWindow("My Game Window", 400, 140, sdl.SDL_WINDOW_OPENGL) orelse {
+        log.info("Unable to create window: {s}", .{sdl.SDL_GetError()});
+        return error.SDLInitializationFailed;
+    };
+    defer sdl.SDL_DestroyWindow(screen);
+
+    const renderer = sdl.SDL_CreateRenderer(screen, null) orelse {
+        log.info("Unable to create renderer: {s}", .{sdl.SDL_GetError()});
+        return error.SDLInitializationFailed;
+    };
+    defer sdl.SDL_DestroyRenderer(renderer);
+
+    var quit = false;
+    var has_run_frame: FrameLog = .none;
+    while (!quit) {
+        if (has_run_frame == .one_frame_passed) {
+            // NOTE(jae): 2024-10-03
+            // Allow inspection of logs to see if a frame executed at least once
+            log.debug("has executed one frame", .{});
+            has_run_frame = .logged_one_frame;
+        }
+        var event: sdl.SDL_Event = undefined;
+        while (sdl.SDL_PollEvent(&event)) {
+            switch (event.type) {
+                sdl.SDL_EVENT_QUIT => {
+                    quit = true;
+                },
+                else => {},
+            }
+        }
+
+        _ = sdl.SDL_SetRenderDrawColor(renderer, 200, 200, 0, 255);
+        _ = sdl.SDL_RenderClear(renderer);
+        _ = sdl.SDL_RenderPresent(renderer);
+        sdl.SDL_Delay(17);
+        if (has_run_frame == .none) {
+            has_run_frame = .one_frame_passed;
+        }
+    }
+}
+
+const FrameLog = enum {
+    none,
+    one_frame_passed,
+    logged_one_frame,
+};

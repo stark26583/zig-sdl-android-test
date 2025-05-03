@@ -1,0 +1,3 @@
+0
+4378 856222 1746274887330150300 efe42da5d87df9a4e0a0f6cebcd2496d 1 .zig-cache/o/db584d66a7ae1118c8bb8518fc747efd/zig-generated.keystore
+3875469 0 0 d6bb1577027a204539a863eb5c5d4a67 1 .zig-cache/o/68d92a5c8d4194523930c5ca689ddcf6/aligned-sdl-android-test.apk

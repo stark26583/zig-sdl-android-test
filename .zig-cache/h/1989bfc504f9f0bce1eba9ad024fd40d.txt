@@ -1,0 +1,13 @@
+0
+202 773556 1746259772421694900 25e56e2d0089bb73de02d5cc7aef6ba1 1 android/src/ZigSDLActivity.java
+597 773946 1743451939000000000 65cd294e4ce1cd781858f7b3dfbb3c93 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/HIDDevice.java
+24031 773978 1743451939000000000 a48af19c6f99bb2a1d124cc84f7b8548 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/HIDDeviceBLESteamController.java
+27462 773983 1743451939000000000 7afff972cb15ff8e00676b3c1e0e14b9 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/HIDDeviceManager.java
+9554 774001 1743451939000000000 c0f5dc8b785baf9acdfb590e08c94386 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/HIDDeviceUSB.java
+3487 774009 1743451939000000000 62e54c5e81558a35054ee7aa32b28b93 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDL.java
+80872 774014 1743451939000000000 2f53536fd4664c35ffff5a9f32f78fd4 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDLActivity.java
+4715 774021 1743451939000000000 c6f2e119aa53dc1fc347586388fc6860 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDLAudioManager.java
+30871 774031 1743451939000000000 9e0106e0421db5688688395d97ff180d 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDLControllerManager.java
+2395 774058 1743451939000000000 1cb1c909cd864e1e6d558595d556760c 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDLDummyEdit.java
+4915 774078 1743451939000000000 28b4143c26d6ce0e1e1264e156a9e86b 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDLInputConnection.java
+14669 774103 1743451939000000000 bce73035fb6f0a8ba7cbe7631660b0fd 1 sdl/SDL-release-3.2.10/android-project/app/src/main/java/org/libsdl/app/SDLSurface.java
