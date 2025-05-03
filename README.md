@@ -47,4 +47,4 @@ adb logcat --pid=`adb shell pidof -s com.zig.sdl3`
 
 ### Thanks to
 
-[https://github.com/silbinarywolf/zig-android-sdk](url) 
+- https://github.com/silbinarywolf/zig-android-sdk 
