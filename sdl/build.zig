@@ -25,11 +25,11 @@ pub fn build(b: *std.Build) !void {
     lib.addCSourceFiles(.{
         .root = sdl_path,
         .files = &generic_src_files,
-        .flags = &.{"-DSDL_VIDEO_DRIVER_VULKAN=1, -fvisibility=default"},
+        // .flags = &.{"-DSDL_VIDEO_DRIVER_VULKAN=1, -fvisibility=default"},
     });
     // lib.linkLibC();
-    lib.root_module.addCMacro("DSDL_VIDEO_DRIVER_VULKAN", "1");
-    lib.root_module.addCMacro("SDL_USE_BUILTIN_OPENGL_DEFINITIONS", "1");
+    // lib.root_module.addCMacro("DSDL_VIDEO_DRIVER_VULKAN", "1");
+    // lib.root_module.addCMacro("SDL_USE_BUILTIN_OPENGL_DEFINITIONS", "1");
     // lib.root_module.addCMacro(name: []const u8, value: []const u8)
 
     lib.root_module.addCSourceFiles(.{

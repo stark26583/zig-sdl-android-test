@@ -1,5 +1,7 @@
 # zig-sdl3-android-test
 
+![My Image](src/Waydroid-screenshot.png)
+
 ### Build, install to test one target against a local emulator and run
 
 ```sh

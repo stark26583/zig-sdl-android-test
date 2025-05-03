@@ -70,7 +70,7 @@ pub fn build(b: *std.Build) void {
         const app_module = b.createModule(.{
             .target = target,
             .optimize = optimize,
-            .root_source_file = b.path("src/sdl-zig-demo.zig"),
+            .root_source_file = b.path("src/main.zig"),
         });
         var exe: *std.Build.Step.Compile = if (target.result.abi.isAndroid()) b.addLibrary(.{
             .name = exe_name,
