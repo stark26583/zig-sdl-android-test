@@ -1,6 +1,6 @@
 # zig-sdl3-android-test
 
-![My Image](src/Waydroid-screenshot.png)
+![My Image](./src/framespersecond.jpeg)
 
 ### Build, install to test one target against a local emulator and run
 
@@ -44,3 +44,7 @@ Bash (app must be running, logs everything by the process including modules)
 ```sh
 adb logcat --pid=`adb shell pidof -s com.zig.sdl3`
 ```
+
+### Thanks to
+
+[https://github.com/silbinarywolf/zig-android-sdk](url) 
