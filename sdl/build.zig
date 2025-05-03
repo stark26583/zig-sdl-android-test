@@ -166,10 +166,30 @@ const generic_src_files = [_][]const u8{
     "src/io/SDL_asyncio.c",
     "src/io/SDL_iostream.c",
     "src/io/generic/SDL_asyncio_generic.c",
+
     "src/joystick/SDL_gamepad.c",
     "src/joystick/SDL_joystick.c",
     "src/joystick/SDL_steam_virtual_gamepad.c",
     "src/joystick/controller_type.c",
+    "src/joystick/hidapi/SDL_hidapijoystick.c",
+    "src/joystick/hidapi/SDL_hidapi_combined.c",
+    "src/joystick/hidapi/SDL_hidapi_gamecube.c",
+    "src/joystick/hidapi/SDL_hidapi_luna.c",
+    "src/joystick/hidapi/SDL_hidapi_ps3.c",
+    "src/joystick/hidapi/SDL_hidapi_ps4.c",
+    "src/joystick/hidapi/SDL_hidapi_ps5.c",
+    "src/joystick/hidapi/SDL_hidapi_rumble.c",
+    "src/joystick/hidapi/SDL_hidapi_shield.c",
+    "src/joystick/hidapi/SDL_hidapi_stadia.c",
+    "src/joystick/hidapi/SDL_hidapi_steam.c",
+    "src/joystick/hidapi/SDL_hidapi_steam_hori.c",
+    "src/joystick/hidapi/SDL_hidapi_steamdeck.c",
+    "src/joystick/hidapi/SDL_hidapi_switch.c",
+    "src/joystick/hidapi/SDL_hidapi_wii.c",
+    "src/joystick/hidapi/SDL_hidapi_xbox360.c",
+    "src/joystick/hidapi/SDL_hidapi_xbox360w.c",
+    "src/joystick/hidapi/SDL_hidapi_xboxone.c",
+
     "src/locale/SDL_locale.c",
     "src/main/SDL_main_callbacks.c",
     "src/main/SDL_runapp.c",
@@ -213,6 +233,8 @@ const generic_src_files = [_][]const u8{
     "src/stdlib/SDL_strtokr.c",
     "src/storage/SDL_storage.c",
     "src/thread/SDL_thread.c",
+    // "src/thread/generic/SDL_sysrwlock.c",
+
     "src/time/SDL_time.c",
     "src/timer/SDL_timer.c",
     "src/video/SDL_RLEaccel.c",
@@ -253,6 +275,8 @@ const android_src_files = [_][]const u8{
     "src/audio/openslES/SDL_openslES.c",
     "src/audio/aaudio/SDL_aaudio.c",
 
+    "src/gpu/vulkan/SDL_gpu_vulkan.c",
+
     "src/render/opengles2/SDL_render_gles2.c",
     "src/render/opengles2/SDL_shaders_gles2.c",
     "src/render/vulkan/SDL_render_vulkan.c",
@@ -260,12 +284,25 @@ const android_src_files = [_][]const u8{
 
     "src/haptic/android/SDL_syshaptic.c",
     "src/joystick/android/SDL_sysjoystick.c",
+    "src/joystick/virtual/SDL_virtualjoystick.c",
+
+    "src/storage/generic/SDL_genericstorage.c",
+
     "src/locale/android/SDL_syslocale.c",
     "src/misc/android/SDL_sysurl.c",
     "src/power/android/SDL_syspower.c",
     "src/filesystem/android/SDL_sysfilesystem.c",
+    "src/filesystem/posix/SDL_sysfsops.c",
     "src/camera/android/SDL_camera_android.c",
     "src/sensor/android/SDL_androidsensor.c",
+
+    "src/process/posix/SDL_posixprocess.c",
+    "src/process/dummy/SDL_dummyprocess.c",
+
+    "src/dialog/android/SDL_androiddialog.c",
+    // "src/dialog/unix/SDL_sysdialog.c",
+
+    "src/time/unix/SDL_systime.c",
 
     "src/timer/unix/SDL_systimer.c",
     "src/loadso/dlopen/SDL_sysloadso.c",
@@ -275,6 +312,9 @@ const android_src_files = [_][]const u8{
     "src/thread/pthread/SDL_syssem.c",
     "src/thread/pthread/SDL_systhread.c",
     "src/thread/pthread/SDL_systls.c",
+    "src/thread/pthread/SDL_sysrwlock.c",
+
+    "src/tray/unix/SDL_tray.c",
 
     "src/video/android/SDL_androidclipboard.c",
     "src/video/android/SDL_androidevents.c",
